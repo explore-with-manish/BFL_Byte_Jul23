@@ -1,8 +1,15 @@
 {
     "compilerOptions": {
-        "target": "ES2021",
+        "target": "ES5",
         "outDir": "output",
-        "module": "None"
+        "module": "None",
+        "noImplicitAny": true,
+        "sourceMap": true,
+        "removeComments": true,
+        "lib": [
+            "DOM",
+            "ES2015"
+        ]
     },
     "exclude": [
         "node_modules",
