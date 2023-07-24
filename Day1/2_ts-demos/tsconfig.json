@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "ES2021",
+        "outDir": "output",
+        "module": "None"
+    },
+    "exclude": [
+        "node_modules",
+        "assets"
+    ]
+}
