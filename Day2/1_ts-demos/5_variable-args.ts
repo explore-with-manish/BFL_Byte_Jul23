@@ -73,3 +73,11 @@ console.log("y: ", y);
 console.log("After Swaping...");
 console.log("x: ", x);
 console.log("y: ", y);
+
+// Combine comma seperated items into a Array (...) - Rest Parameter
+// ... used in function parameter at the time of function creation - Rest Parameter
+// ... on Left hand side of assignment operator - Rest Parameter
+
+// Split Array/Object to a comma seperated items - Spread Operator
+// ... used in function argument at the time of function call - Spread Operator
+// ... on Right hand side of assignment operator - Spread Operator
