@@ -1,3 +1,6 @@
+// Type assertion is a mechanism which tells the compiler about the type of a variable. 
+// Type assertion is explicitly telling the compiler that we want to treat the entity as a different type.
+
 let data1: any = 'this is a string';
 // console.log(data1.toUppercase());
 
