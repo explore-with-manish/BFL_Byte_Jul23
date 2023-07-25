@@ -9,7 +9,7 @@
         "noEmitOnError": true,
         "lib": [
             "DOM",
-            "ES2015"
+            "ES2017"
         ]
     },
     "exclude": [
