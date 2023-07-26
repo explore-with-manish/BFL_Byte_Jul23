@@ -7,6 +7,7 @@
         "sourceMap": true,
         "removeComments": true,
         "noEmitOnError": true,
+        "strict": true,
         "lib": [
             "DOM",
             "ES2017"
