@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "ES5",
         "outDir": "output",
-        "module": "None",
+        "module": "ES2015",
         "noImplicitAny": true,
         "sourceMap": true,
         "removeComments": true,
