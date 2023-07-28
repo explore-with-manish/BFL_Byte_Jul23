@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row">
+        <h1 class="text-primary text-center">Directives</h1>
+    </div>
+
+    <div class="mt-4" [hidden]="!flag">
+        <h2 class="text-success">1. Attribute Directives</h2>
+
+        <h3 class="blue bg-green">Hello There</h3>
+        <h3 [ngClass]="'blue bg-green'">Hello There</h3>
+        <h3 [ngClass]="{'blue': true, 'bg-green': true}">Hello There</h3>
+        <h3 [ngClass]="{'blue': false, 'red': true, 'bg-green': true}">Hello There</h3>
+        <h3 [ngClass]="{'blue': flag, 'red': !flag, 'bg-green': !flag}">Hello There</h3>
+        <h3 [ngClass]="{'blue': flag, 'red bg-green': !flag}">Hello There</h3>
+        <hr>
+        <app-assign-two></app-assign-two>
+    </div>
+
+    <div class="mt-4" [hidden]="flag">
+        <h2 class="text-success">2. Structural Directives</h2>
+
+        <!-- <button class="btn btn-primary" (click)="addName()">Add Name</button>
+        <button class="btn btn-danger" (click)="removeName()">Remove Name</button>
+
+        <h3 class="mt-4" [ngStyle]="{'display': name ? 'block' : 'none'}">
+            Hello, {{name}}
+        </h3> -->
+
+        <!-- <ng-template [ngIf]="name">
+            <h3 class="mt-4">
+                Hello, {{name}}
+            </h3>
+        </ng-template> -->
+
+        <!-- <h3 class="mt-4" *ngIf="name">
+            Hello, {{name}}
+        </h3>
+
+        <h3 class="mt-4" *ngIf="name else elseBlock">
+            Hello, {{name}}
+        </h3>
+
+        <ng-template #elseBlock>
+            <h3 class="mt-4">
+                No Name
+            </h3>
+        </ng-template> -->
+
+        <list></list>
+    </div>
+</div>

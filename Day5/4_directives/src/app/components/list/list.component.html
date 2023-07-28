@@ -1,0 +1,33 @@
+<!-- <ul class="list-group">
+    <li *ngFor="let person of personList" class="list-group-item">
+        <a href="#" (click)="select(person)">{{person}}</a>
+    </li>
+</ul>
+
+<hr>
+<h3 class="text-primary">Selected: {{selected}}</h3> -->
+
+<!-- <ul class="list-group">
+    <li *ngFor="let person of personList" class="list-group-item">
+        <a href="https://www.google.com" (click)="select(person, $event)">{{person}}</a>
+    </li>
+</ul>
+
+<hr>
+<h3 class="text-primary">Selected: {{selected}}</h3> -->
+
+<!-- <ul class="list-group">
+    <li *ngFor="let person of personList" class="list-group-item">
+        <a href="https://www.google.com/search?q={{person}}">{{person}}</a>
+    </li>
+</ul> -->
+
+<ul class="list-group">
+    <!-- <li *ngFor="let person of personList" class="list-group-item" highlight [highlightColor]="'skyblue'"> -->
+    <li *ngFor="let person of personList" class="list-group-item" [highlight]="'skyblue'">
+        <a href="https://www.google.com" (click)="select(person, $event)">{{person}}</a>
+    </li>
+</ul>
+
+<hr>
+<h3 class="text-primary">Selected: {{selected}}</h3>

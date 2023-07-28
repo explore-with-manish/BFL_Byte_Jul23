@@ -7,10 +7,10 @@
             <p class="text-primary">{{terms}}</p>
         </div>
         <div class="checkbox">
-            <label><input type="checkbox"> Accept Terms</label>
+            <label><input type="checkbox" [(ngModel)]="flag"> Accept Terms</label>
         </div>
     </div>
     <div class="card-footer">
-        <button class="btn btn-success">Next</button>
+        <button class="btn btn-success" [disabled]="!flag">Next</button>
     </div>
 </div>
