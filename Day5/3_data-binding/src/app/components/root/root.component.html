@@ -1,0 +1,87 @@
+<div class="container">
+    <div [hidden]="flag">
+        <h2 class="text-success">Assignment</h2>
+        <app-assign-one></app-assign-one>
+        <hr>
+        <app-assign-two></app-assign-two>
+    </div>
+
+    <div [hidden]="!flag">
+        <h2 class="text-success">Two Way Binding</h2>
+        <div class="row mb-3 mt-3`">
+            <div class="row">
+                <h2 class="text-center">Message: {{message}}</h2>
+            </div>
+            <div class="col-12">
+                <input type="text" class="form-control" bindon-ngModel="message">
+            </div>
+            <div class="col-12">
+                <input type="text" class="form-control" [(ngModel)]="message">
+            </div>
+            <div class="col-12">
+                <input type="text" class="form-control" [(ngModel)]="message" [ngModelOptions]="{updateOn: 'blur'}">
+            </div>
+        </div>
+    </div>
+
+    <div [hidden]="!flag">
+        <h2 class="text-success">Event Binding</h2>
+        <h2 class="text-center">Message: {{message}}</h2>
+
+        <div class="d-grid gap-2 mx-auto col-6">
+            <button class="btn btn-primary" on-click="doChange()">Click</button>
+            <button class="btn btn-primary" (click)="doChange()">Click</button>
+            <a href="#" class="btn btn-outline-primary" (click)="anchorClick1()">Anchor Click One</a>
+            <a href="https://www.google.com" class="btn btn-outline-primary" (click)="anchorClick1()">Anchor Click
+                Two</a>
+            <a href="https://www.google.com" class="btn btn-outline-primary" (click)="anchorClick2($event)">Anchor Click
+                Three</a>
+
+        </div>
+    </div>
+
+    <div [hidden]="!flag">
+        <div class="row">
+            <h2 class="text-success">Attribute Binding</h2>
+            <div class="col">
+                <img src="assets/sg.jpg" alt="Sunglass" [height]="h" [width]="w">
+            </div>
+            <div class="col">
+                <table style="border: 1px solid black;" [attr.height]="h" [width]="w">
+                    <thead>
+                        <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Age</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Jill</td>
+                            <td>Smith</td>
+                            <td>50</td>
+                        </tr>
+                        <tr>
+                            <td>Eve</td>
+                            <td>Jackson</td>
+                            <td>94</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div [hidden]="!flag">
+        <h2 class="text-success">String Interpolation & Property Binding</h2>
+        <h2 class="text-primary">{{message}}</h2>
+        <h2 class="text-primary" innerText="{{message}}"></h2>
+        <h2 class="text-primary" bind-innerText="message"></h2>
+        <h2 class="text-primary" [innerText]="message"></h2>
+
+        <hr>
+        <h2>Hiding: <span hidden="{{flag}}">{{message}}</span></h2>
+        <h2>Hiding: <span bind-hidden="flag">{{message}}</span></h2>
+        <h2>Hiding: <span [hidden]="flag">{{message}}</span></h2>
+    </div>
+</div>
