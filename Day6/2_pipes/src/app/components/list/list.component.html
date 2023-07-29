@@ -1,0 +1,13 @@
+<div class="form-group mt-3 mb-3">
+    <label for="txtBy" class="form-label">Serach Name, which starts with</label>
+    <input type="text" id="txtBy" class="form-control" [(ngModel)]="by">
+</div>
+
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let person of personList | filter:by">
+        <a href="https://www.google.com" (click)="select(person, $event)">{{person}}</a>
+    </li>
+</ul>
+
+<hr>
+<h3 class="text-primary">Selected: {{selected}}</h3>
