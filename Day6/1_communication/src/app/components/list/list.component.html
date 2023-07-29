@@ -1,0 +1,8 @@
+<ul class="list-group">
+    <li class="list-group-item" *ngFor="let person of personList">
+        <a href="https://www.google.com" (click)="select(person, $event)">{{person}}</a>
+    </li>
+</ul>
+
+<hr>
+<h3 class="text-primary">Selected: {{selected}}</h3>

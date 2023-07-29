@@ -1,0 +1,16 @@
+When Counter Component loads
+
+The textbox, + and - button will be enabled
+And the reset button will be disabled
+
+Counter Will start with 0 and interval of 1, if interval is not provided
+
+When we change the value in the textbox, count should be modified to the entered value
+
+Click of + button will increase the count by +interval
+Click of - button will decrease the count by -interval
+
+After 10 total clicks on any, or both, + and - buttons, 
+The textbox, + and - button should be disabled and reset should be enabled. 
+
+When we click Reset button, everything should be re-initialized.
