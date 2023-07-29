@@ -1,0 +1,37 @@
+<form class="form-horizontal" #regForm="ngForm" (submit)="logForm(regForm)">
+    <fieldset class="form-group border p-3">
+        <legend class="text-center">
+            <h3>Template Driven Form</h3>
+        </legend>
+        <div class="form-group mb-2">
+            <label for="firstname" class="mb-1">
+                <h6 class="mb-0 text-sm">Firstname</h6>
+            </label>
+            <input type="text" class="form-control" name="firstname" id="firstname" ngModel required>
+        </div>
+        <div class="form-group  mb-2">
+            <label for="lastname" class="mb-1">
+                <h6 class="mb-0 text-sm">Lastname</h6>
+            </label>
+            <input type="text" class="form-control" name="lastname" id="lastname" ngModel>
+        </div>
+        <div ngModelGroup="address">
+            <div class="form-group mb-2">
+                <label for="city" class="mb-1">
+                    <h6 class="mb-0 text-sm">City</h6>
+                </label>
+                <input type="text" class="form-control" name="city" id="city" ngModel>
+            </div>
+            <div class="form-group mb-2">
+                <label for="zip" class="mb-1">
+                    <h6 class="mb-0 text-sm">Zip</h6>
+                </label>
+                <input type="text" class="form-control" name="zip" id="zip" ngModel>
+            </div>
+        </div>
+        <div class="d-grid gap-2 mx-auto mt-3">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="reset" class="btn btn-secondary">Reset</button>
+        </div>
+    </fieldset>
+</form>

@@ -1,0 +1,47 @@
+<form class="form-horizontal" [formGroup]="regForm" (submit)="logForm()">
+    <fieldset class="form-group border p-3">
+        <legend class="text-center">
+            <h3>Reactive Driven Form</h3>
+        </legend>
+        <div class="form-group mb-2">
+            <label for="firstname" class="mb-1">
+                <h6 class="mb-0 text-sm">Firstname</h6>
+            </label>
+            <input type="text" class="form-control" formControlName="firstname" id="firstname">
+        </div>
+        <div class="form-group  mb-2">
+            <label for="lastname" class="mb-1">
+                <h6 class="mb-0 text-sm">Lastname</h6>
+            </label>
+            <input type="text" class="form-control" formControlName="lastname" id="lastname">
+        </div>
+        <div formGroupName="address">
+            <div class="form-group mb-2">
+                <label for="city" class="mb-1">
+                    <h6 class="mb-0 text-sm">City</h6>
+                </label>
+                <input type="text" class="form-control" formControlName="city" id="city">
+            </div>
+            <div class="form-group mb-2">
+                <label for="zip" class="mb-1">
+                    <h6 class="mb-0 text-sm">Zip</h6>
+                </label>
+                <input type="text" class="form-control" formControlName="zip" id="zip">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="d-grid gap-2 mx-auto mt-3">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                    <button type="reset" class="btn btn-secondary" (click)="resetForm()">Reset</button>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-grid gap-2 mx-auto mt-3">
+                    <button type="button" class="btn btn-success" (click)="setForm()">Set</button>
+                    <button type="button" class="btn btn-warning" (click)="patchForm()">Patch</button>
+                </div>
+            </div>
+        </div>
+    </fieldset>
+</form>
