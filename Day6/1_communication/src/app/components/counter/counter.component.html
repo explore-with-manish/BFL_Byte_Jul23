@@ -4,14 +4,14 @@
     </div>
 
     <div class="d-grid gap-2 mx-auto col-6">
-        <input type="text" class="form-control form-control-lg">
-        <button class="btn btn-info">
+        <input type="number" class="form-control form-control-lg" [disabled]="flag" [(ngModel)]="count">
+        <button class="btn btn-info" [disabled]="flag" (click)="increment()">
             <span class='fs-4'>+</span>
         </button>
-        <button class="btn btn-info">
+        <button class="btn btn-info" [disabled]="flag" (click)="decrement()">
             <span class='fs-4'>-</span>
         </button>
-        <button class="btn btn-info">
+        <button class="btn btn-info" [disabled]="!flag" (click)="reset()">
             <span class='fs-4'>Reset</span>
         </button>
     </div>

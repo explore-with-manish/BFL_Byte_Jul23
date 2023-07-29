@@ -3,11 +3,41 @@
         <h1 class="text-primary text-center">Communication</h1>
     </div>
 
-    <!-- <list [personList]="pList"></list> -->
+    <list [personList]="pList"></list>
 
-    <div>
+    <!-- <div>
         <counter></counter>
         <hr>
         <counter [interval]="10"></counter>
-    </div>
+    </div> -->
+
+    <!-- <div class="mt-5">
+        <h2 class="text-primary text-center">Calling Method of Child from Parent Component</h2>
+
+        <counter #c1></counter>
+        <counter #c2></counter>
+
+        <hr>
+        <div class="row mt-3 mb-3">
+            <div class="d-grid gap-2 mx-auto col-6">
+                <button class="btn btn-warning" (click)="c1.reset()">
+                    <span class='fs-4'>Parent Reset One</span>
+                </button>
+                <button class="btn btn-warning" (click)="p2_reset(c1)">
+                    <span class='fs-4'>Parent Reset Two</span>
+                </button>
+                <button class="btn btn-warning" (click)="p3_reset()">
+                    <span class='fs-4'>Parent Reset Three</span>
+                </button>
+                <button class="btn btn-warning" (click)="reset_all()">
+                    <span class='fs-4'>Parent Reset All</span>
+                </button>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- <div class="mt-5">
+        <h3 class="alert alert-danger text-center" *ngIf="message">{{message}}</h3>
+        <counter (onMax)="updateMessage($event)"></counter>
+    </div> -->
 </div>

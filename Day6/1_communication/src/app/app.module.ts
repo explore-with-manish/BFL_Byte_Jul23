@@ -4,12 +4,14 @@ import { RootComponent } from './components/root/root.component';
 import { FormsModule } from '@angular/forms';
 import { ListComponent } from './components/list/list.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { DetailsComponent } from './components/details/details.component';
 
 @NgModule({
   declarations: [
     RootComponent,
     ListComponent,
-    CounterComponent
+    CounterComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
