@@ -64,6 +64,7 @@
                 class="form-control" formControlName="age" id="age">
             <div class="invalid-feedback" *ngIf="frm['age'].touched && frm['age'].invalid">
                 <p *ngIf="frm['age'].hasError('required')">Age is required.</p>
+                <p *ngIf="frm['age'].hasError('ageRange')">Age should be between {{minAge}} and {{maxAge}}.</p>
             </div>
         </div>
         <div formGroupName="address">

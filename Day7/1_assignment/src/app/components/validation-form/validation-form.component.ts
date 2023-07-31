@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { CustomValidators } from 'src/app/utilities/validators/custom-validators';
 
 @Component({
   selector: 'validation-form',
@@ -29,6 +30,7 @@ export class ValidationFormComponent {
       gender: ['', Validators.required],
       age: ['', [
         Validators.required,
+        CustomValidators.ageRange(this.minAge, this.maxAge)
       ]],
       address: this.formBuilder.group({
         country: ['', Validators.required],
