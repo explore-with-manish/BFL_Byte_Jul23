@@ -7,19 +7,47 @@
                 </legend>
                 <div class="form-group">
                     <label for="employeeID">Employee ID:</label>
-                    <input type="text" readonly class="form-control" id="employeeID" formControlName="employeeID">
+                    <input type="text" readonly class="form-control" id="employeeID" formControlName="employeeID"
+                        [ngClass]="{'is-invalid': employeeForm.get('employeeID')?.invalid && (employeeForm.get('employeeID')?.dirty || employeeForm.get('employeeID')?.touched)}">
+                    <div class="invalid-feedback">
+                        <p *ngIf="employeeForm.get('employeeID')?.hasError('required')">Employee ID is required.</p>
+                        <p *ngIf="employeeForm.get('employeeID')?.hasError('pattern')">Employee ID must consist of
+                            digits only.</p>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" formControlName="name">
+                    <input type="text" class="form-control" id="name" formControlName="name"
+                        [ngClass]="{'is-invalid': employeeForm.get('name')?.invalid && (employeeForm.get('name')?.dirty || employeeForm.get('name')?.touched)}">
+                    <div class="invalid-feedback">
+                        <p *ngIf="employeeForm.get('name')?.hasError('required')">Name is required.</p>
+                        <p *ngIf="employeeForm.get('name')?.hasError('minlength')">Name must be at least 3 characters
+                            long.</p>
+                        <p *ngIf="employeeForm.get('name')?.hasError('maxlength')">Name must be at less than 50
+                            characters.</p>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="designation">Designation:</label>
-                    <input type="text" class="form-control" id="designation" formControlName="designation">
+                    <input type="text" class="form-control" id="designation" formControlName="designation"
+                        [ngClass]="{'is-invalid': employeeForm.get('designation')?.invalid && (employeeForm.get('designation')?.dirty || employeeForm.get('designation')?.touched)}">
+                    <div class="invalid-feedback">
+                        <p *ngIf="employeeForm.get('designation')?.hasError('required')">Designation is required.</p>
+                        <p *ngIf="employeeForm.get('designation')?.hasError('minlength')">Designation must be at least 3 characters
+                            long.</p>
+                        <p *ngIf="employeeForm.get('designation')?.hasError('maxlength')">Designation must be at less than 50
+                            characters.</p>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="salary">Salary:</label>
-                    <input type="text" class="form-control" id="salary" formControlName="salary">
+                    <input type="text" class="form-control" id="salary" formControlName="salary"
+                        [ngClass]="{'is-invalid': employeeForm.get('salary')?.invalid && (employeeForm.get('salary')?.dirty || employeeForm.get('salary')?.touched)}">
+                    <div class="invalid-feedback">
+                        <p *ngIf="employeeForm.get('salary')?.hasError('required')">Salary is required.</p>
+                        <p *ngIf="employeeForm.get('salary')?.hasError('pattern')">Salary must consist of
+                            digits only.</p>
+                    </div>
                 </div>
                 <div class="d-grid gap-2 mx-auto mt-3">
                     <button type="submit" class="btn btn-primary">Save</button>

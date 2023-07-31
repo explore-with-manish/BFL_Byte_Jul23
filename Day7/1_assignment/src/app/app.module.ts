@@ -5,13 +5,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmployeeTableComponent } from './components/employee-table/employee-table.component';
 import { EmployeeRootComponent } from './components/employee-root/employee-root.component';
 import { EmployeeFormComponent } from './components/employee-form/employee-form.component';
+import { ValidationFormComponent } from './components/validation-form/validation-form.component';
 
 @NgModule({
   declarations: [
     RootComponent,
     EmployeeTableComponent,
     EmployeeRootComponent,
-    EmployeeFormComponent
+    EmployeeFormComponent,
+    ValidationFormComponent
   ],
   imports: [
     BrowserModule,
