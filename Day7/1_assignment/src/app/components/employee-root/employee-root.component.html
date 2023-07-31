@@ -1,0 +1,4 @@
+<employee-form [employee]="employee" (onSave)="saveEmployee($event)"></employee-form>
+<hr>
+<employee-table [employees]="employeeList" (onSelect)="selectEmployee($event)"
+    (onRemove)="removeEmployee($event)"></employee-table>
