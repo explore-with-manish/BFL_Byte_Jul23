@@ -33,6 +33,24 @@ export class PostService {
         );
     }
 
+    createPost(newPost: Post): Observable<Post> {
+        return this.httpClient.post<Post>(`${this.url}`, newPost)
+            .pipe(
+                delay(3000),
+                retry(3),
+                catchError(this._handleError('createPost', newPost))
+            );
+    }
+
+    updatePost(id: number, postToUpdate: Post): Observable<Post> {
+        return this.httpClient.put<Post>(`${this.url}/${id}`, postToUpdate)
+            .pipe(
+                delay(3000),
+                retry(3),
+                catchError(this._handleError('updatePost', postToUpdate))
+            );
+    }
+
     private _handleError<T>(operation = 'operation', result?: T) {
         return (err: HttpErrorResponse): Observable<T> => {
             // Error Logging / Reporting
