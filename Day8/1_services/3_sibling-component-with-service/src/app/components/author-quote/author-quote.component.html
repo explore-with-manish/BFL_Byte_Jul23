@@ -1,0 +1,4 @@
+<h4 class="text-light">Author Quote Component</h4>
+
+<textarea class="padtop" readonly *ngIf="selectedAuthor">{{selectedAuthor.quote!}}</textarea>
+<button class="btn btn-primary" (click)="getQuote()">Get Quote</button>
