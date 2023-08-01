@@ -1,41 +1,59 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+// import { authorList } from 'src/app/data/author-list-data';
 import { Author } from 'src/app/models/author.interface';
+import { AuthorsService } from 'src/app/services/authors.service';
+import { NAuthorsService } from 'src/app/services/nauthors.service';
+import { AUTHORS_TOKEN } from 'src/app/utilities/tokens/di-token';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './root.component.html',
-  styleUrls: ['./root.component.css']
+    selector: 'app-root',
+    templateUrl: './root.component.html',
+    styleUrls: ['./root.component.css'],
+    providers: [
+        // { provide: 'Authors', useValue: authorList }
+        // { provide: AUTHORS_TOKEN, useValue: authorList }
+
+        // { provide: AUTHORS_TOKEN, useExisting: 'Authors' }
+
+        // { provide: AuthorsService, useClass: AuthorsService }
+        // AuthorsService
+
+        // NAuthorsService
+
+        { provide: "ENV", useValue: "PROD" },
+        {
+            provide: AuthorsService, useFactory: (env: any) => {
+                if (env === "DEV")
+                    return new AuthorsService();
+                else
+                    return new NAuthorsService();
+            }, deps: ['ENV']
+        }
+    ]
 })
 export class RootComponent implements OnInit {
-  list?: Array<Author>;
-  selectedAuthor?: Author;
+    list?: Array<Author>;
+    selectedAuthor?: Author;
 
-  ngOnInit() {
-      let fowler = {
-          name: "Fowler",
-          quote: "Any fool can write code that a computer can understand. Good programmers write code that humans can understand."
-      },
-          twain = {
-              name: "Twain",
-              quote: "Why, I have known clergymen, good men, kind-hearted, liberal, sincere, and all that, who did not know the meaning of a 'flush.' It is enough to make one ashamed of one's species."
-          },
-          poe = {
-              name: "Poe",
-              quote: "Deep into that darkness peering, long I stood there, wondering, fearing, doubting, dreaming dreams no mortal ever dared to dream before."
-          },
-          plato = {
-              name: "Plato",
-              quote: "All things will be produced in superior quantity and quality, and with greater ease, when each man works at a single occupation, in accordance with his natural gifts, and at the right moment, without meddling with anything else. "
-          };
+    // constructor(@Inject('Authors') private authors: Array<Author>) { }
+    // constructor(@Inject(AUTHORS_TOKEN) private authors: Array<Author>) { }
 
-      this.list = [twain, fowler, poe, plato];
-  }
+    // constructor(private authorsService: AuthorsService) { }
 
-  selectAuthor(a: Author) {
-      this.selectedAuthor = a;
-  }
+    // constructor(private authorsService: NAuthorsService) { }
 
-  isSelected(a: Author) {
-      return this.selectedAuthor === a;
-  }
+    constructor(private authorsService: AuthorsService) { }
+
+    ngOnInit() {
+        // this.list = this.authors;
+        this.list = this.authorsService.Authors;
+    }
+
+    selectAuthor(a: Author) {
+        this.selectedAuthor = a;
+    }
+
+    isSelected(a: Author) {
+        return this.selectedAuthor === a;
+    }
 }
