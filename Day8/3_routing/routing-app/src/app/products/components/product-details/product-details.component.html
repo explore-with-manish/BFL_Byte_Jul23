@@ -1,0 +1,12 @@
+<div>
+    <h3 class="text-warning">Product Details</h3>
+    <div *ngIf="product else elseBlock">
+        <h3>{{product!.name}}</h3>
+        <p>{{product!.description}}</p>
+        <hr>
+        <h4>{{product!.status}}</h4>
+    </div>
+    <ng-template #elseBlock>
+        <h3 class="text-danger">Product not Found...</h3>
+    </ng-template>
+</div>

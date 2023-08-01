@@ -7,6 +7,8 @@ import { BsNavComponent } from './components/bs-nav/bs-nav.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AuthorsModule } from './authors/authors.module';
+import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthorsModule,
+    ProductsModule
   ],
   providers: [],
   bootstrap: [
