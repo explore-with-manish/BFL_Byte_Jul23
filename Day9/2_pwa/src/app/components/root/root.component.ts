@@ -5,8 +5,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './root.component.html'
 })
 export class RootComponent implements OnInit{
-  
   isOnline: boolean = false;
+
   ngOnInit(): void {
     this.updateOnlineStatus();
 

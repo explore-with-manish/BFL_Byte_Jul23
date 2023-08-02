@@ -1,15 +1,15 @@
-<div class="container">
-    <div class="text-center">
-        <h1 class="text-primary">Assignment</h1>
-    </div>
+<div class="container-fluid py-3">
+    <h1>Angular Progressive Web Application (PWA) Changed</h1>
 
-    <div class="row">
+    <div class="row my-5">
         <div class="col text-end">
             Status:
+        </div>
+        <div class="col">
             <span class="badge bg-success" *ngIf="isOnline">Online</span>
             <span class="badge bg-danger" *ngIf="!isOnline">Offline</span>
         </div>
     </div>
-    
-    <employee-root></employee-root>
 </div>
+
+<employee-root></employee-root>
