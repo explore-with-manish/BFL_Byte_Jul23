@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand px-2" routerLink="/">
+            <img src="../../../favicon.ico" alt="Angular" width="30" height="30" class="d-inline-block align-top">
+            Angular Routing Demo
+        </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#myNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item px-2">
+                    <a class="nav-link" routerLink="/" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}">Home</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" routerLink="/about" routerLinkActive="active">About</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" routerLink="/authors" routerLinkActive="active">Authors</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" routerLink="/lazy" routerLinkActive="active"
+                        [routerLinkActiveOptions]="{exact: true}">Lazy One</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" routerLink="/lazy/two" routerLinkActive="active">Lazy Two</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" routerLink="/admin" routerLinkActive="active">Admin</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" routerLink="/crud" routerLinkActive="active">Crud App</a>
+                </li>
+                <li class="nav-item px-2">
+                    <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

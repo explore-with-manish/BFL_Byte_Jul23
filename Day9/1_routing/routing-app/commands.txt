@@ -1,0 +1,23 @@
+ng new routing-app
+
+cd routing-app
+
+npm i bootstrap bootstrap-icons
+
+Include the CSS and JS for bootstrap in angular.json file
+
+Delete the file related to app.component, and remove AppComponent from app.module.ts file
+
+ng g c components/root -s --skip-tests=true
+
+Add RootComponent in @NgModule.bootstrap array in app.module.ts file
+
+ng serve
+
+ng g c components/bs-nav -p --skip-tests=true
+
+ng g c components/home -s -p --skip-tests=true 
+
+ng g c components/about -s -p --skip-tests=true
+
+ng g c components/NotFound -s -p --skip-tests=true
