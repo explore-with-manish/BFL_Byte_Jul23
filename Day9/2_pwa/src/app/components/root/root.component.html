@@ -3,5 +3,13 @@
         <h1 class="text-primary">Assignment</h1>
     </div>
 
+    <div class="row">
+        <div class="col text-end">
+            Status:
+            <span class="badge bg-success" *ngIf="isOnline">Online</span>
+            <span class="badge bg-danger" *ngIf="!isOnline">Offline</span>
+        </div>
+    </div>
+    
     <employee-root></employee-root>
 </div>
