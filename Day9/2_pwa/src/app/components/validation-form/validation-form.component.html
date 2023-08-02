@@ -1,0 +1,129 @@
+<form class="form-horizontal" [formGroup]="regForm" (submit)="logForm()">
+    <fieldset class="form-group border p-3">
+        <legend class="text-center">
+            <h3>Reactive Form with Validation</h3>
+        </legend>
+        <div class="form-group mb-2">
+            <label for="firstname" class="mb-1">
+                <h6 class="mb-0 text-sm">Firstname</h6>
+            </label>
+            <input [ngClass]="{'is-invalid': frm['firstname'].touched && frm['firstname'].invalid}" type="text"
+                class="form-control" formControlName="firstname" id="firstname">
+            <div class="invalid-feedback" *ngIf="frm['firstname'].touched && frm['firstname'].invalid">
+                <p>Firstname is required.</p>
+            </div>
+        </div>
+        <div class="form-group  mb-2">
+            <label for="lastname" class="mb-1">
+                <h6 class="mb-0 text-sm">Lastname</h6>
+            </label>
+            <input [ngClass]="{'is-invalid': frm['lastname'].touched && frm['lastname'].invalid}" type="text"
+                class="form-control" formControlName="lastname" id="lastname">
+            <div class="invalid-feedback" *ngIf="frm['lastname'].touched && frm['lastname'].invalid">
+                <p *ngIf="frm['lastname'].hasError('required')">Lastname is required.</p>
+                <p *ngIf="frm['lastname'].hasError('minlength')">Lastname should be more than 1 Character.</p>
+                <p *ngIf="frm['lastname'].hasError('maxlength')">Lastname should be less than 7 Characters.</p>
+            </div>
+        </div>
+        <div class="form-group mb-2">
+            <label for="gender" class="mb-1">
+                <h6 class="mb-0 text-sm">Gender</h6>
+            </label>
+            <div [ngClass]="{'is-invalid': frm['gender'].touched && frm['gender'].invalid}">
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" formControlName="gender" id="gender" value="female"
+                        [ngClass]="{'is-invalid': frm['gender'].touched && frm['gender'].invalid}">
+                    <label class="form-check-label" for="gender">
+                        Female
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" formControlName="gender" id="gender" value="male"
+                        [ngClass]="{'is-invalid': frm['gender'].touched && frm['gender'].invalid}">
+                    <label class="form-check-label" for="gender">
+                        Male
+                    </label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" class="form-check-input" formControlName="gender" id="gender" value="others"
+                        [ngClass]="{'is-invalid': frm['gender'].touched && frm['gender'].invalid}">
+                    <label class="form-check-label" for="gender">
+                        Others
+                    </label>
+                </div>
+            </div>
+            <div class="invalid-feedback" *ngIf="frm['gender'].touched && frm['gender'].invalid">
+                <p>Gender is required.</p>
+            </div>
+        </div>
+        <div class="form-group mb-2">
+            <label for="age" class="mb-1">
+                <h6 class="mb-0 text-sm">Age</h6>
+            </label>
+            <input [ngClass]="{'is-invalid': frm['age'].touched && frm['age'].invalid}" type="number"
+                class="form-control" formControlName="age" id="age">
+            <div class="invalid-feedback" *ngIf="frm['age'].touched && frm['age'].invalid">
+                <p *ngIf="frm['age'].hasError('required')">Age is required.</p>
+                <p *ngIf="frm['age'].hasError('ageRange')">Age should be between {{minAge}} and {{maxAge}}.</p>
+            </div>
+        </div>
+        <div formGroupName="address">
+            <div class="form-group mb-2">
+                <label for="country" class="mb-1">
+                    <h6 class="mb-0 text-sm">Country</h6>
+                </label>
+                <select [ngClass]="{'is-invalid': address['country'].touched && address['country'].invalid}"
+                    class="form-select" formControlName="country" id="country">
+                    <option *ngFor="let country of countries" [value]="country.id">{{country.name}}</option>
+                </select>
+                <div class="invalid-feedback" *ngIf="address['country'].touched && address['country'].invalid">
+                    <p>Country Name is required.</p>
+                </div>
+            </div>
+            <div class="form-group mb-2">
+                <label for="city" class="mb-1">
+                    <h6 class="mb-0 text-sm">City</h6>
+                </label>
+                <input [ngClass]="{'is-invalid': address['city'].touched && address['city'].invalid}" type="text"
+                    class="form-control" formControlName="city" id="city">
+                <div class="invalid-feedback" *ngIf="address['city'].touched && address['city'].invalid">
+                    <p>City Name is required.</p>
+                </div>
+            </div>
+            <div class="form-group mb-2">
+                <label for="zip" class="mb-1">
+                    <h6 class="mb-0 text-sm">Zip</h6>
+                </label>
+                <input [ngClass]="{'is-invalid': address['zip'].touched && address['zip'].invalid}" type="text"
+                    class="form-control" formControlName="zip" id="zip">
+                <div class="invalid-feedback" *ngIf="address['zip'].touched && address['zip'].invalid">
+                    <p>Postal Code is required.</p>
+                </div>
+            </div>
+            <div class="form-group mb-2">
+                <label for="fulladdress" class="mb-1">
+                    <h6 class="mb-0 text-sm">Full Address</h6>
+                </label>
+                <textarea [ngClass]="{'is-invalid': address['fulladdress'].touched && address['fulladdress'].invalid}"
+                    type="text" class="form-control" formControlName="fulladdress" id="fulladdress"></textarea>
+                <div class="invalid-feedback" *ngIf="address['fulladdress'].touched && address['fulladdress'].invalid">
+                    <p>Full Postal Address is required.</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-group form-check">
+            <input [ngClass]="{'is-invalid': frm['acceptTerms'].touched && frm['acceptTerms'].invalid}" type="checkbox"
+                class="form-check-input" formControlName="acceptTerms" id="acceptTerms">
+            <label for="acceptTerms" class="form-check-label">
+                <h6 class="mb-0 text-sm">Agree to the terms and conditions</h6>
+            </label>
+            <div class="invalid-feedback" *ngIf="frm['acceptTerms'].touched && frm['acceptTerms'].invalid">
+                <p>You must agree before submitting.</p>
+            </div>
+        </div>
+        <div class="d-grid gap-2 mx-auto mt-3">
+            <button type="submit" class="btn btn-primary">Save</button>
+            <button type="reset" class="btn btn-secondary" (click)="resetForm()">Reset</button>
+        </div>
+    </fieldset>
+</form>

@@ -1,0 +1,30 @@
+<table class="table">
+    <thead>
+        <th>EMPLOYEE ID</th>
+        <th>NAME</th>
+        <th>DESIGNATION</th>
+        <th>SALARY</th>
+        <th></th>
+        <th>ACTIONS</th>
+        <th></th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{ employee.employeeID }}</td>
+            <td>{{ employee.name }}</td>
+            <td>{{ employee.designation }}</td>
+            <td>{{ employee.salary }}</td>
+            <td>
+                <a href="/#" class="text-info"
+                    (click)="this.onSelect.emit({ details: true, edit: false, employee: employee })">Details</a>
+            </td>
+            <td>
+                <a href="/#" class="text-warning"
+                    (click)="this.onSelect.emit({ details: false, edit: true, employee: employee })">Edit</a>
+            </td>
+            <td>
+                <a href="/#" class="text-danger" (click)="showMessage(employee.employeeID)">Delete</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
