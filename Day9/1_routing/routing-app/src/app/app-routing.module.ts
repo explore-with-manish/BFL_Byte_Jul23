@@ -8,20 +8,27 @@ import { ProductsRootComponent } from './products/components/products-root/produ
 import { ProductNotSelectedComponent } from './products/components/product-not-selected/product-not-selected.component';
 import { ProductDetailsComponent } from './products/components/product-details/product-details.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { canActivateAdminGuard } from './services/guards/can-activate-admin.guard';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'authors', component: AuthorRootComponent },
-  { 
-    path: 'products', 
-    component: ProductsRootComponent, 
+  {
+    path: 'products',
+    component: ProductsRootComponent,
     children: [
       { path: '', component: ProductNotSelectedComponent },
       { path: ':id', component: ProductDetailsComponent },
     ]
   },
-  { path: 'admin', component: AdminComponent },
+  {
+    path: 'admin',
+    component: AdminComponent,
+    canActivate: [canActivateAdminGuard]
+  },
+  { path: 'login', component: LoginComponent },
   { path: '**', component: NotFoundComponent }
 ];
 
